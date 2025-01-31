@@ -1,0 +1,24 @@
+.body {
+    background-color:white;
+}
+
+.banner {
+    height: 50vh;
+    width: 100vw;
+    background-color: gray;
+    align-self: center;
+}
+
+.heroPic{
+    height: 400px;
+    width: 400px;
+    border-radius: 100%;
+}
+
+.bannerTable{
+    height: 50vh;
+    width: 100vw;
+    text-align: center;
+    border: 1px solid black;
+}
+

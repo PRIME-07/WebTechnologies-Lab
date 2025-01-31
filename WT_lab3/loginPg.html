@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login page</title>
+    </head>
+    <body>
+        <div align="center" style="height: 30px; width:100vw; background-color: skyblue; text-align: middle;">
+            <h2>Welcome to Login page</h2>
+        </div>
+    </br>
+        <div align="center">
+            <form>
+                <lable for="username">Username:</lable></br>
+                <input type="text" id="username" oninput="validUsername()"></br>
+                <div id="usernameError" style="color: red;"></div><br>
+            </br>
+                <lable for="password">Passowrd:</lable></br>
+                <input type="password" id="password" oninput="validPassword()"></br>
+                <div id="passwordError" style="color: red;"></div><br>
+            </form>
+        </div>
+        <div align="center">
+        </br>
+            <button onclick="validate()">Login</button></br>
+        </br>
+            <button onclick="location.href='../WT_lab3/homepage.html'">HomePage</button>
+        </div>    
+    </body>
+</html>
+
+<script>
+        function validate(){
+            if(validUsername() && validPassword()){
+                alert("Login Successful!");
+            }else{
+                alert("Please correct the errors before submitting.");
+            }
+        }
+
+        function validUsername() {
+            const regex = /^[a-zA-Z0-9-_@]{4,}$/; 
+            let username = document.getElementById("username").value;
+            if (regex.test(username)) {
+                document.getElementById("usernameError").innerHTML = "";
+                return true;
+            } else {
+                document.getElementById("usernameError").innerHTML = "Invalid Username! Minimum 4 characters.";
+                return false;
+            }
+        }
+
+        function validPassword() {
+            let password = document.getElementById("password").value;
+            if (password.length >= 6) {
+                document.getElementById("passwordError").innerHTML = "";
+                return true;
+            } else {
+                document.getElementById("passwordError").innerHTML = "Password must be at least 6 characters.";
+                return false;
+            }
+        }
+</script>

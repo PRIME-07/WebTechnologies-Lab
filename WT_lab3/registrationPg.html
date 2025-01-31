@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Page</title>
+</head>
+<body>
+    <div align="center" style="height: 50px; width:100vw; background-color: skyblue; display: flex; align-items: center; justify-content: center;">
+        <h2>Welcome to Registration Page</h2>
+    </div>
+
+    <br>
+    <div align="center">
+        <form onsubmit="return false;">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" oninput="validEmail()" required><br>
+            <div id="emailError" style="color: red;"></div><br>
+
+            <label for="phone">Phone No:</label><br>
+            <input type="tel" id="phone" oninput="validPhone()" required><br>
+            <div id="phoneError" style="color: red;"></div><br>
+
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" oninput="validUsername()" required><br>
+            <div id="usernameError" style="color: red;"></div><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" oninput="validPassword()" required><br>
+            <div id="passwordError" style="color: red;"></div><br>
+        </form>
+    </div>
+
+    <div align="center">
+        <br>
+        <button onclick="register()">Register</button><br><br>
+        <button onclick="location.href='../WT_lab3/homepage.html'">HomePage</button>
+    </div>    
+
+    <script>
+        function register() {
+            if (validEmail() && validPhone() && validUsername() && validPassword()) {
+                alert("Registration Successful!");
+            } else {
+                alert("Please correct the errors before submitting.");
+            }
+        }
+
+        function validEmail() {
+            const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            let email = document.getElementById("email").value;
+            if (regex.test(email)) {
+                document.getElementById("emailError").innerHTML = "";
+                return true;
+            } else {
+                document.getElementById("emailError").innerHTML = "Invalid Email!";
+                return false;
+            }
+        }
+
+        function validPhone() {
+            const regex = /^[0-9]{10}$/; 
+            let phone = document.getElementById("phone").value;
+            if (regex.test(phone)) {
+                document.getElementById("phoneError").innerHTML = "";
+                return true;
+            } else {
+                document.getElementById("phoneError").innerHTML = "Invalid Phone Number! Must be 10 digits.";
+                return false;
+            }
+        }
+
+        function validUsername() {
+            const regex = /^[a-zA-Z0-9-_@]{4,}$/; 
+            let username = document.getElementById("username").value;
+            if (regex.test(username)) {
+                document.getElementById("usernameError").innerHTML = "";
+                return true;
+            } else {
+                document.getElementById("usernameError").innerHTML = "Invalid Username! Minimum 4 characters.";
+                return false;
+            }
+        }
+
+        function validPassword() {
+            let password = document.getElementById("password").value;
+            if (password.length >= 6) {
+                document.getElementById("passwordError").innerHTML = "";
+                return true;
+            } else {
+                document.getElementById("passwordError").innerHTML = "Password must be at least 6 characters.";
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
