@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Number to Words Converter</title>
-    <link rel="stylesheet" href="numbers.css"> <!-- External CSS -->
+    <link rel="stylesheet" href="numbers.css">
 </head>
 <body>
     <div class="container">
@@ -24,7 +24,7 @@
     <!-- JavaScript inside HTML -->
     <script>
         function validateNumber() {
-            const regex = /^(0|[1-9][0-9]{0,2})$/; // Allows numbers 0-999
+            const regex = /^(0|[1-9][0-9]{0,2})$/; 
             let input = document.getElementById("number").value;
             
             if (regex.test(input)) {
@@ -41,7 +41,7 @@
         const below_hundred = ['Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
 
         function convert() {
-            if (!validateNumber()) return; // Validate before conversion
+            if (!validateNumber()) return; 
 
             let num = parseInt(document.getElementById("number").value);
             let name = convertNumber(num);
