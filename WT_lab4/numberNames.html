@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number to Words Converter</title>
+    <link rel="stylesheet" href="numbers.css"> <!-- External CSS -->
+</head>
+<body>
+    <div class="container">
+        <h1>Convert Number to Words</h1>
+        
+        <div class="form-group">
+            <label for="number">Enter a Number (0-999):</label>
+            <input type="number" id="number" oninput="validateNumber()" placeholder="Enter a number">
+            <div id="inputError" class="error"></div>
+        </div>
+        
+        <button onclick="convert()">Convert</button>
+        
+        <div id="output" class="output"></div>
+    </div>
+
+    <!-- JavaScript inside HTML -->
+    <script>
+        function validateNumber() {
+            const regex = /^(0|[1-9][0-9]{0,2})$/; // Allows numbers 0-999
+            let input = document.getElementById("number").value;
+            
+            if (regex.test(input)) {
+                document.getElementById("inputError").innerHTML = "";
+                return true;
+            } else {
+                document.getElementById("inputError").innerHTML = "Enter a valid number (0-999)";
+                return false;
+            }
+        }
+
+        const single_digit = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
+        const double_digit = ['Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
+        const below_hundred = ['Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+
+        function convert() {
+            if (!validateNumber()) return; // Validate before conversion
+
+            let num = parseInt(document.getElementById("number").value);
+            let name = convertNumber(num);
+
+            document.getElementById("output").innerHTML = name;
+        }
+
+        function convertNumber(num) {
+            if (num === 0) return "Zero";
+            if (num < 10) return single_digit[num];
+            if (num < 20) return double_digit[num - 10];
+            if (num < 100) return below_hundred[Math.floor(num / 10) - 2] + (num % 10 !== 0 ? " " + single_digit[num % 10] : "");
+            
+            let hundreds = single_digit[Math.floor(num / 100)] + " Hundred";
+            let remainder = num % 100;
+            return remainder ? hundreds + " " + convertNumber(remainder) : hundreds;
+        }
+    </script>
+</body>
+</html>
