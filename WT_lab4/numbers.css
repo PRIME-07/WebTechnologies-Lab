@@ -1,7 +1,6 @@
-/* General Page Styling */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f7f7f7;
+    background: linear-gradient(to bottom, #87CEEB, #ffffff);
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,64 +10,59 @@ body {
     box-sizing: border-box;
 }
 
-/* Main Container */
 .container {
-    background-color: #ffffff;
+    background: linear-gradient(to top, #cacaca, #ffffff);
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
-    text-align: center;
+    text-align: center; 
 }
 
-/* Heading */
 h1 {
-    color: #333;
+    color: #ff7f00; 
     font-size: 24px;
     margin-bottom: 20px;
     font-weight: 600;
 }
 
-/* Form Group */
 .form-group {
     margin-bottom: 15px;
 }
 
-/* Label */
 label {
     font-size: 16px;
-    color: #555;
+    color: #ff7f00; 
 }
 
-/* Input Field */
 input {
-    width: 100%;
+    width: 90%;
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 2px solid #ffffff; 
     border-radius: 6px;
     font-size: 16px;
     margin-top: 10px;
     outline: none;
     transition: border 0.3s;
+    background: white;
+    color: black;
 }
 
 input:focus {
-    border-color: #007bff;
+    border-color: #ff7f00; 
 }
 
-/* Error Message */
 .error {
     color: red;
     font-size: 14px;
     margin-top: 5px;
 }
 
-/* Button */
 button {
     width: 100%;
     padding: 12px;
-    background-color: #007bff;
+    background: linear-gradient(to right, #ff7f00, #ff4500);
     border: none;
     color: white;
     font-size: 16px;
@@ -78,13 +72,12 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background: linear-gradient(to right, #ff4500, #cc3700); 
 }
 
-/* Output */
 .output {
     margin-top: 20px;
     font-size: 18px;
     font-weight: 600;
-    color: #333;
+    color: #ff4500;
 }

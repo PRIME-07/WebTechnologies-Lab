@@ -2,38 +2,38 @@
 <html>
 <head>
     <title>Registration Page</title>
+    <link rel="stylesheet" href="HomeStyle.css">
 </head>
 <body>
-    <div align="center" style="height: 50px; width:100vw; background-color: skyblue; display: flex; align-items: center; justify-content: center;">
-        <h2>Welcome to Registration Page</h2>
-    </div>
+    <div class="header">Anuj Sharad Mankumare</div>
 
-    <br>
-    <div align="center">
+    <div class="container">
+        <h2>Create Your Account</h2>
         <form onsubmit="return false;">
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" oninput="validEmail()" required><br>
-            <div id="emailError" style="color: red;"></div><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" oninput="validEmail()" required>
+            <br/>
+            <div id="emailError" class="error"></div>
 
-            <label for="phone">Phone No:</label><br>
-            <input type="tel" id="phone" oninput="validPhone()" required><br>
-            <div id="phoneError" style="color: red;"></div><br>
+            <label for="phone">Phone No:</label>
+            <input type="tel" id="phone" oninput="validPhone()" required>
+            <br/>
+            <div id="phoneError" class="error"></div>
 
-            <label for="username">Username:</label><br>
-            <input type="text" id="username" oninput="validUsername()" required><br>
-            <div id="usernameError" style="color: red;"></div><br>
+            <label for="username">Username:</label>
+            <input type="text" id="username" oninput="validUsername()" required>
+            <br/>
+            <div id="usernameError" class="error"></div>
 
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" oninput="validPassword()" required><br>
-            <div id="passwordError" style="color: red;"></div><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" oninput="validPassword()" required>
+            <br/>
+            <div id="passwordError" class="error"></div>
         </form>
-    </div>
 
-    <div align="center">
-        <br>
-        <button onclick="register()">Register</button><br><br>
-        <button onclick="location.href='../WT_lab3/homepage.html'">HomePage</button>
-    </div>    
+        <button onclick="register()">Register</button>
+        <button onclick="location.href='homepage.html'">HomePage</button>
+    </div>
 
     <script>
         function register() {
