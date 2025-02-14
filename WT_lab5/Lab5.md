@@ -1,1 +1,1 @@
-Lab 5 exist at location: "C:\xampp\htdocs\wtl"
+Lab 5 exist at location: "C:\xampp\htdocs\WT_lab5"
